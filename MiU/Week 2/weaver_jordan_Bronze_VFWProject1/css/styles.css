@@ -6,16 +6,19 @@ Class 0813 */
 
 /*Main Content*/
 
+body {
+	background:#FFE4C4;
+	}
+	
 h1 {
-	/*margin: 25px, 20px;
+	margin: 25px, 20px;
 	padding: 15px;
-	border: 3px double #2F4F4F; */
-	background:Black;
-	color:White;
-	/*font: rockwell extra bold;*/
+	border: 3px double #2F4F4F; 
+	background:#668B8B;
+	color:#B4CDCD;
+	font: rockwell extra bold;
 	
 }
-
 
 header > ul li {
 		display: inline;
