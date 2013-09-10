@@ -7,7 +7,7 @@
 window.addEventListener("DOMContentLoaded", function(){
 	
 	//getElementById Function
-	function $(x){
+	function ge(x){
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Create Select field element
 	function typeGoal(){
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $('typeGoal'),
+			selectLi = ge('typeGoal'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "types");
 		for(var i=0, j=goalType.length; i<j; i++){
@@ -42,17 +42,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$('goalForm').style.display = "none";
-				$('clear').style.display =  "inline";
-				$('displayLink').style.display = "none";
-				$('addNew').style.display = "inline";
+				ge('goalForm').style.display = "none";
+				ge('clear').style.display =  "inline";
+				ge('displayLink').style.display = "none";
+				ge('addNew').style.display = "inline";
 				break
 			case "off":
-				$('goalForm').style.display = "block";
-				$('clear').style.display =  "inline";
-				$('displayLink').style.display = "inline";
-				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				ge('goalForm').style.display = "block";
+				ge('clear').style.display =  "inline";
+				ge('displayLink').style.display = "inline";
+				ge('addNew').style.display = "none";
+				ge('items').style.display = "none";
 				break;
 			default:
 				return false;	
@@ -70,12 +70,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		//object prop. contain array with the form label and input value
 		getSelectedRadio();
 		var item				= {};
-			item.gname			=["Goal Name", $('gname').value];
-			item.date			=["Date of Achievment", $('date').value];
-			item.typeGoal		=["Goal Type", $('types').value];
+			item.gname			=["Goal Name", ge('gname').value];
+			item.date			=["Date of Achievment", ge('date').value];
+			item.typeGoal		=["Goal Type", ge('types').value];
 			item.schedule		=["Goal Activity", scheduleValue];
-			item.amount			=["Amount", $('amount').value];
-			item.comments		=["Comments", $('comments').value];
+			item.amount			=["Amount", ge('amount').value];
+			item.comments		=["Comments", ge('comments').value];
 			
 			//Save Data into Local Storage:
 			localStorage.setItem(id, JSON.stringify(item));
@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$('items').style.display = "block";
+		ge('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -174,9 +174,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");	
 		
 		//populate form fields with current LS values
-		$('gname').value = item.gname[1];
-		$('date').value = item.date[1];
-		$('types').value = item.types[1];
+		ge('gname').value = item.gname[1];
+		ge('date').value = item.date[1];
+		ge('types').value = item.typeGoal[1];
 		var radios = document.forms[0].schedule;
 		for(var i=0; i<radios.length; i++){
 			if(radios[i].value == "Daily" && item.schedule[1] == "Daily"){
@@ -187,14 +187,14 @@ window.addEventListener("DOMContentLoaded", function(){
 				radios[i].setAttribute("checked", "checked");
 			}
 		}
-		$('amount').value = item.amount[1];
-		$('comments').value = item.comments[1];
+		ge('amount').value = item.amount[1];
+		ge('comments').value = item.comments[1];
 		
 		//Remove the initial listener from the input ' save goal' button
 		save.removeEventListener("click", storeData);
 		//Change sumbit button value to edit button
-		$('submit').value = "Edit Contact";
-		var editSubmit = $('submit');
+		ge('submit').value = "Edit Contact";
+		var editSubmit = ge('submit');
 		//save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", validate);
@@ -224,8 +224,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function validate(e){
 		//define the elemts we want to check
-		var getGname = $('gname');
-			getDate = $('date');
+		var getGname = ge('gname');
+			getDate = ge('date');
 			
 			//Reset Error Messages
 			errMsg.innerHTML = "";
@@ -271,17 +271,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Variable defaults
 	var goalType = ["--Choose Type--", "Personal", "Savings", "Workout","Education"],
 	scheduleValue
-	errMsg =$('errors');
+	errMsg =ge('errors');
 	;
 	
 	typeGoal();
 	
 	//set Link & Submit Click Events
-	var displayLink = $('displayLink');
+	var displayLink = ge('displayLink');
 	displayLink.addEventListener("click", getData);
-	var clearLink = $('clear');
+	var clearLink = ge('clear');
 	clearLink.addEventListener("click", clearLocal);
-	var save = $('submit');
+	var save = ge('submit');
 	save.addEventListener("click", validate);
 	
 	
