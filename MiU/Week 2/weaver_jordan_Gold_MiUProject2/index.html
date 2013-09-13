@@ -37,94 +37,236 @@
 <body>
 
 
-	<div data-role="page" id="index">
+<div data-role="page" id="home" data-add-back-btn="true">
     
 		<div data-role="header" data-position="fixed">
        		<h1>My Goals</h1>
     	</div>
         
-<!-- Feature -->
-        <a href="additem.html" data-ajax="false">
+    <div data-role="content">
+    
+    	<!-- Feature -->
+       <a href="additem.html" data-ajax="false">
 <img border="0" src="images/setGoal.png" height="170px"></a>
 
-
-<!-- SEARCH 
-	<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search" data-inset="true">
-    	<li><a href="#">Apple</a></li>
-    	<li><a href="#">Banana</a></li>
-    	<li><a href="#">Cherry</a></li>
-   		<li><a href="#">Cranberry</a></li>
-    	<li><a href="#">Grape</a></li>
-    	<li><a href="#">Orange</a></li>
-    </ul>-->
-	
+</div>
 <!-- BROWSE BY -->    
-    <div data-role="content">
+    
     	<ul data-role="listview" data-filter="true" data-filter-placeholder="Search">
-            <h2>Browse by:</h2>
-            	<li>
-                	<a href="#">   
-                   	Goal name</a>
-               	</li>
-                <li>
-                	<a href="#">
-                    Date</a>
-                </li>
-                <li>
-                	<a href="#">
-                    Type of Goal</a>
-                </li>
+            <br><h2>Browse by:</h2>
+            	<div data-role="collapsible" data-collapsed="true">   
+                   	<h4>Goal name<h4>
+                    <p>Saving money</p>
+                    <p>Go to the gym</p>
+                    <p>Get homework finished</p>
+               	</div>
+               <div data-role="collapsible" data-collapsed="true">
+                    <h4>Date</h4>
+                    <p>Will tag Local Storage when I get there.</p>
+               </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                   <h4> Type of Goal </h4>
+                   <p>Personal</p>
+                   <p>Education</p>
+                   <p>Workout</p>
+                   <p>Savings</p>
+                   </div>
                 <li> 
-                	<a href="#">
-                    Goal Activity</a>
+                	<a href="#credits" data-transition="slide">
+                    Credits</a>
                	</li>
     	</ul>
-    </div>
     
-    
+ 
 <!-- FOOTER -->    
         	<div data-role="footer" data-position="fixed" data-theme="a">
         		<div data-role="navbar">
             		<ul>
                 		<li>
-                        <a href="#home" data-icon="home">Home</a>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
                         </li>
                     	<li>
-                        <a href="#info" data-icon="plus">Info</a>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
+                        </li>
+               		</ul>
+        		</div>
+            </div>
+            
+</div>
+<!-- INFO PAGE -->
+
+<div data-role="page" id="info" data-add-back-btn="true">
+    
+	<div data-role="header" data-position="fixed">
+        	<h1>Info</h1>
+    </div>
+
+    <div class="ui-block-a">
+    	<div class="ui-bar ui-bar-e" style="height:60px">
+        <a href="index.html"><img border="0" src="images/gold.png"><br>Gold</a>
+        </div>
+    </div>
+    
+    
+    <div class="ui-block-b">
+    <div class="ui-bar ui-bar-e" style="height:60px">
+        <a href="weaver_jordan_Bronze_VFWProject1/index.html"><img border="0" src="images/bronze.png"><br>Bronze</a>
+    </div>
+    </div>
+    	
+    <div class="ui-block-c">
+    <div class="ui-bar ui-bar-e" style="height:60px">
+        <a href="#repo"><img border="0" src="images/repo.png"><br>Repo</a>
+    </div>
+    </div>
+    
+    
+    <div data-role="footer" data-position="fixed" data-theme="a">
+        		<div data-role="navbar">
+            		<ul data-transition="slide">
+                		<li>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
                         </li>
                     	<li>
-                        <a href="#credits" data-icon="star">Credits</a>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
+                        </li>
+               		</ul>
+        		</div>
+      </div>
+
+</div>	
+
+<!-- CREDITS PAGE -->
+
+<div data-role="page" id="credits" data-add-back-btn="true">
+    
+    	<div data-role="header" data-position="fixed">
+        	<h1>Credits</h1>
+        </div>
+             
+             <div data-role="collapsible-set">
+                <div data-role="content">
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>Jordan Weaver</h3>
+                        <p>All of us here at 'My Goals' would like to thank Jordan Weaver, the creator, for his short patients and trying to stay on track with school.</p>
+              		</div>
+                </div>
+              </div>
+                
+                <div data-role="content">
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>Full Sail</h3>
+                        <p>I would like to thank Full Sail for the education that is being provided for me. It has been ann honor to get to study at this university. Thanks.</p>
+                   </div>
+                   
+               </div>
+        
+
+
+<!-- CREDITS FOOTER -->    
+        	<div data-role="footer" data-position="fixed" data-theme="a">
+        		<div data-role="navbar">
+            		<ul data-transition="slide">
+                		<li>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
+                        </li>
+                    	<li>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
                         </li>
                		</ul>
         		</div>
              </div>
-            
-            
-<!-- HOME PAGE -->
-	<div data-role="page" id="home" data-add-back-btn="true">
+            	
+</div>
+<!-- NEWSFEED 
+
+<div data-role="page" id="newsfeed" data-add-back-btn="true" >
     
-    	<div data-role="header" data-position="fixed"
-        	<h1> Home Page</div>
+    	<div data-role="header" data-position="fixed">
+        	<h1>Newsfeed</h1>
         </div>
-        
-        <div data-role="content">
-        
-        
-        
+             
+            
+                <div data-role="content">
+                    <div data-role="collapsible" data-collapsed="true" data-inset="false">
+                        <h3>Syria agrees to hand over...</h3><h6>43s</h6>
+                        <p>After weeks of contemplating on weather to attack Syria, Russian President, Putin, asks Syria to hand over their wepons to the U.N.</p>
+                </div>
+                    
+                    <div data-role="collapsible" data-collapsed="true" data-inset="false">
+                        <h3>Boy, 13, threatens to "Blow up" school</h3><h6>4 min.</h6>
+                        <p>Middle school buy threaten his teacher that he would "Blow Up" the school. He is now in handcuffs and being questioned.</p>
+               </div>
+               
+               		  <div data-role="collapsible" data-collapsed="true" data-inset="false">
+                        <h3>Pulp Fiction Remake!</h3><h6>7 min.</h6>
+                        <p>Recently, it was announced that LionsGate will be recreating the 1994 hit movie, Pulp Fiction.</p>
+               </div>
+               
+               		  <div data-role="collapsible" data-collapsed="true" data-inset="false">
+                        <h3>Parents concerned over GTA5</h3><h6>7 min.</h6>
+                        <p>Monday, the release of the hit video game, Grand Theft Auto 5, will hit the stores and homes of millions Americans. Some parents are concerned that this violent, vulgar game will influance youth to become destructive.</p>
+               </div>
+</div>
+
+   
+        	<div data-role="footer" data-position="fixed" data-theme="a">
+        		<div data-role="navbar">
+            		<ul data-transition="slide">
+                		<li>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
+                        </li>
+                    	<li>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
+                        </li>
+               		</ul>
+                 </div>   
+            </div>
+</div>
+
+-->
+
+<!--Repo Link -->
+<div data-role="page" id="repo" data-add-back-btn="true">
+    
+    	<div data-role="header" data-position="fixed">
+        	<h1>Repo</h1>
         </div>
-        
-        <!--<div data-role="footer" data-position="fixed">
-        	<h4>Footer</h4>
-        </div>-->
-        
-    </div>
-<!-- INFO PAGE -->
-
-<!-- CREDITS PAGE -->
-
-<!-- NEWSFEED -->
-
-        </div>
+             
+             <div data-role="collapsible-set">
+                <div data-role="content">
+                	<a href="https://github.com/b71208/GitHub_MiU/tree/gh_pages/MiU/Week%202">To my repo.</a>
+             	</div>
+             </div>
+             
+             <div data-role="footer" data-position="fixed" data-theme="a">
+        		<div data-role="navbar">
+            		<ul data-transition="slide">
+                		<li>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
+                        </li>
+                    	<li>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
+                        </li>
+               		</ul>
+                 </div>   
+            </div>
+</div>
     
     <!-- JavaScript under here -->
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
