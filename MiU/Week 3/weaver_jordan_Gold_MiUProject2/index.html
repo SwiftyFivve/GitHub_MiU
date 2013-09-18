@@ -46,7 +46,7 @@
     <div data-role="content">
     
     	<!-- Feature -->
-       <a href="additem.html" data-ajax="false">
+       <a href="#addItem" data-ajax="false">
 <img border="0" src="images/setGoal.png" height="170px"></a>
 
 </div>
@@ -284,6 +284,116 @@
                  </div>   
             </div>
 </div>
+
+<!-- Add Item -->
+<div data-role="page" id="addItem" data-add-back-btn="true">
+
+<div data-role="header" data-position="fixed">
+        	<h1>Add Item</h1>
+        </div>
+        
+	<div data-role="content">
+    	
+        <form action="" method="post" id="goalform">
+        
+        	<div data-role="fieldcontain">
+                <label for="goalname">Goal Name:</label>
+                <input type="text" name="goalname" id="goalname" />
+			</div>
+            
+            <div data-role="fieldcontain">
+            	<label for="email">Email Address:</label>
+        		<input type="email" name="email" id="email" />
+            </div>
+            
+            <!--<div data-role="fieldcontain">
+            	<label for="password">Password:</label>
+        		<input type="password" name="password" id="password" />
+            </div>-->
+            
+             <div data-role="fieldcontain">
+            	<label for="phonenumber">Phone Number:</label>
+        		<input type="text" name="phonenumber" id="phonenumber" />
+            </div>
+            
+            <div data-role="fieldcontain">
+            	<label for="notifications">Turn on Phone Notifications for Goal:</label>
+        		<select data-role="slider">
+                	<option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            
+             <div data-role="fieldcontain">
+            	<fieldset data-role="controlgroup">
+                	<legend>Your Role:</legend>
+                    <input type="radio" value="Value1" name="myradio" id="radio1"/>
+                    <label for="radio1">Swashbuckler</label>
+                	
+                    <input type="radio" value="Value2" name="myradio" id="radio2"/>
+                    <label for="radio2">Value5</label>
+                
+                	<input type="radio" value="Value3" name="myradio" id="radio3"/>
+                    <label for="radio3">Value3</label>
+                </fieldset>
+            </div>
+            
+            <div data-role="fieldcontain">
+            	<fieldset data-role="controlgroup">
+                	<legend>Found:</legend>
+                    <input type="checkbox" value="Value1" name="mycheckbox" id="checkbox1"/>
+                    <label for="checkbox1">Swashbuckler</label>
+                	
+                    <input type="checkbox" value="Value2" name="mycheckbox" id="checkbox2"/>
+                    <label for="checkbox2">Value5</label>
+                
+                	<input type="checkbox" value="Value3" name="mycheckbox" id="checkbox3"/>
+                    <label for="checkbox3">Value3</label>
+                </fieldset>
+            </div>
+            
+            
+            <div data-role="fieldcontain">
+            	<label for="dropbox">Choose Value</label>
+                <select name="dropbox" id="mydropbox">
+                        <option value="Option1">This is option 1</option>
+                        <option value="Option2">And this is option2</option>
+                        <option value="Option3">This is the last option</option>
+                </select>
+           </div>
+            
+             <div data-role="fieldcontain">
+                <input type="reset" value="Reset"  data-theme="b"/>
+                <input type="submit" value="Add Goal!" data-theme="a"/>
+            </div>
+            
+           
+         	
+            
+        </form>
+    
+    </div>
+
+
+
+             <div data-role="footer" data-position="fixed" data-theme="a">
+        		<div data-role="navbar">
+            		<ul data-transition="slide">
+                		<li>
+                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
+                        </li>
+                    	<li>
+                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
+                        </li>
+                        <li>
+                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
+                        </li>
+               		</ul>
+                 </div>   
+            </div>
+</div>
+
+
     
     <!-- JavaScript under here -->
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
