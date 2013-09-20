@@ -24,7 +24,7 @@
 	<meta http-equiv="cleartype" content="on">
 	
 	<!-- StyleSheets under here -->
-	<!--<link href="css/styles.css" rel="stylesheet" type="text/css" />-->
+	<link href="css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="themes/indexPage.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
     <link href="themes/indexPage.css" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@
     	<ul data-role="listview" data-filter="true" data-filter-placeholder="Search">
             <br><h2>Browse by:</h2>
             	<div data-role="collapsible" data-collapsed="true">   
-                   	<h4>Goal name<h4>
+                   	<h4>Goal name</h4>
                     <p>Saving money</p>
                     <p>Go to the gym</p>
                     <p>Get homework finished</p>
@@ -294,16 +294,21 @@
         
 	<div data-role="content">
     	
-        <form action="" method="post" id="goalform">
+        <form action="" id="goalform">
         
         	<div data-role="fieldcontain">
                 <label for="goalname">Goal Name:</label>
-                <input type="text" name="goalname" id="goalname" />
+                <input type="text" name="goalname" id="goalname" value="" placeholder="Please place a life goal here" class="required"/>
+			</div>
+            
+            <div data-role="fieldcontain">
+                <label for="date">Date of Completion:</label>
+                <input type="date" name="date" id="date" value="" placeholder="Please place a life goal here" class="required"/>
 			</div>
             
             <div data-role="fieldcontain">
             	<label for="email">Email Address:</label>
-        		<input type="email" name="email" id="email" />
+        		<input type="email" name="email" id="email" value=""  class="required email" placeholder="example@email.com"/>
             </div>
             
             <!--<div data-role="fieldcontain">
@@ -312,9 +317,9 @@
             </div>-->
             
              <div data-role="fieldcontain">
-            	<label for="phonenumber">Phone Number:</label>
-        		<input type="text" name="phonenumber" id="phonenumber" />
-            </div>
+            	<label for="phone">Phone Number:</label>
+                <input type="tel" data-clear-btn="true" value="" name="phone" id="phone" value="" placeholder="123-456-7890">
+     		</div>
             
             <div data-role="fieldcontain">
             	<label for="notifications">Turn on Phone Notifications for Goal:</label>
@@ -326,79 +331,78 @@
             
              <div data-role="fieldcontain">
             	<fieldset data-role="controlgroup">
-                	<legend>Your Role:</legend>
-                    <input type="radio" value="Value1" name="myradio" id="radio1"/>
-                    <label for="radio1">Swashbuckler</label>
+                	<legend>Remind Me:</legend>
+                    <input type="radio" value="Daily" name="myradio" id="radio1" class="required"/>
+                    <label for="radio1">Daily</label>
                 	
-                    <input type="radio" value="Value2" name="myradio" id="radio2"/>
-                    <label for="radio2">Value5</label>
+                    <input type="radio" value="Weekly" checked="checked" name="myradio" id="radio2"/>
+                    <label for="radio2">Weekly</label>
                 
-                	<input type="radio" value="Value3" name="myradio" id="radio3"/>
-                    <label for="radio3">Value3</label>
+                	<input type="radio" value="Monthly" name="myradio" id="radio3"/>
+                    <label for="radio3">Monthly</label>
                 </fieldset>
             </div>
             
             <div data-role="fieldcontain">
             	<fieldset data-role="controlgroup">
-                	<legend>Found:</legend>
-                    <input type="checkbox" value="Value1" name="mycheckbox" id="checkbox1"/>
-                    <label for="checkbox1">Swashbuckler</label>
+                	<legend>Notification Preferance:</legend>
+                    <input type="checkbox" value="Value1" name="mycheckbox" id="checkbox1" checked="checked" class="required"/>
+                    <label for="checkbox1">Text</label>
                 	
                     <input type="checkbox" value="Value2" name="mycheckbox" id="checkbox2"/>
-                    <label for="checkbox2">Value5</label>
+                    <label for="checkbox2">Email</label>
                 
                 	<input type="checkbox" value="Value3" name="mycheckbox" id="checkbox3"/>
-                    <label for="checkbox3">Value3</label>
+                    <label for="checkbox3">Recorded Phone Message</label>
                 </fieldset>
             </div>
             
             
             <div data-role="fieldcontain">
-            	<label for="dropbox">Choose Value</label>
-                <select name="dropbox" id="mydropbox">
-                        <option value="Option1">This is option 1</option>
-                        <option value="Option2">And this is option2</option>
-                        <option value="Option3">This is the last option</option>
+            	<label for="dropbox">Importance:</label>
+                <select name="dropbox" id="mydropbox" data-native-menu="false" class="required">
+                <option placeholder="true" value>Please Select One</option>
+                        <option value="Not Very">Not Very</option>
+                        <option value="Important">Important</option>
+                        <option value="Very Important">Very Important</option>
                 </select>
            </div>
             
              <div data-role="fieldcontain">
+             	<input type="submit" value="Add Goal!" data-theme="a"/>
                 <input type="reset" value="Reset"  data-theme="b"/>
-                <input type="submit" value="Add Goal!" data-theme="a"/>
+                
             </div>
             
            
-         	
+         	<a href="#formerrors" id="errorlink" data-rel="dialog" data-transition="pop">Open Error</a>
             
         </form>
+        
+     </div>
+ </div>
+
+<!-- Form error pop-up-->
+<div data-role="dialog" id="formerrors">
+    
+		<div data-role="header" data-position="fixed">
+       		<h1>Missing Fields</h1>
+    	</div>
+        
+    <div data-role="content">
+    	<ul>
+        	<li>Test</li>
+        </ul>
     
     </div>
-
-
-
-             <div data-role="footer" data-position="fixed" data-theme="a">
-        		<div data-role="navbar">
-            		<ul data-transition="slide">
-                		<li>
-                        <a href="#home" data-icon="home" data-transition="slide">Home</a>
-                        </li>
-                    	<li>
-                        <a href="#info" data-icon="plus" data-transition="slide">Info</a>
-                        </li>
-                        <li>
-                        <a href="#newsfeed" data-icon="grid" data-transition="slide">Newsfeed</a>
-                        </li>
-               		</ul>
-                 </div>   
-            </div>
 </div>
-
 
     
     <!-- JavaScript under here -->
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+    <script src="js/Sample-main.js" type="text/javascript"></script>
     
 </body>
 </html>
