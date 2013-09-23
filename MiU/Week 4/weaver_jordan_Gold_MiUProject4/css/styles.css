@@ -1,0 +1,10 @@
+/* CSS Document 
+Jordan Weaver 
+Class 0813 */
+
+
+/*Main Content*/
+
+label.error{display:block; margin:10px 0; color:#cc0000;}
+
+#errorlink{display:none;}
